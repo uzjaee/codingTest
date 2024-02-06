@@ -1,9 +1,12 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
 public class PrimaryCode {
     public static void main(String[] args){
+        int [] arr = {6,94,1,2};
+        System.out.println(func2(arr,3));
 
 
 
@@ -23,13 +26,21 @@ public class PrimaryCode {
 
     // 시간 복잡도 관련 2
     public static int func2(int[] arr, int N){
-        int result = 0;
-        for (int i =0; i<N; i++){
-            for (int j=i+1; j<N; j++){
-                if (arr[i] +arr[j] >=100) return 1;
+        // 1부터 99까지의 배열을 생성
+        int [] check = new int[100];
+        // 숫자를 확인하고 대열에 저장
+        for (int i =0; i<N;i++){
+            if(check[100-arr[i]] == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                check[arr[i]]=1;
             }
         }
-        return result;
+        return 0;
+
     }
 
     // 시간 복잡도 관련 3

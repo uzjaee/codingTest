@@ -7,7 +7,7 @@ public class Baek_2576 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int sum = 0;
-        int min = 99999;
+        int min = 999999;
         for (int i = 0; i<7; i++){
             int val = Integer.parseInt(br.readLine());
             if (val %2 != 0 ){
