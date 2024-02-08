@@ -8,17 +8,12 @@ public class Baek_2577 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int val = Integer.parseInt(br.readLine())*Integer.parseInt(br.readLine())*Integer.parseInt(br.readLine());
-        String   r = String.valueOf(val);
         int [] arr = new int[10];
-        for(int i = 0; i <r.length(); i++)
-            arr[r.charAt(i) - '0']++;
-        // 혹은   arr[Charater.getNumericValue(r.charAt(i))]++;   char형을 INT 형으로 변환
-        for(int i : arr) {
-            bw.write(String.valueOf(i));
-            bw.newLine();
+        while(val !=0){
+            arr[val%10]++;
+            val/=10;
         }
-        bw.flush();
-        bw.close();
-
+        for(int i :arr)
+            System.out.println(i);
     }
 }
