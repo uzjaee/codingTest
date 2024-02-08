@@ -6,10 +6,10 @@ public class Baek_10093{
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
             StringTokenizer st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
+            long a = Long.parseLong(st.nextToken());
+            long b = Long.parseLong(st.nextToken());
             if (a > b) {
-                int c = a;
+                long c = a;
                 a = b;
                 b = c;
             }
@@ -17,7 +17,7 @@ public class Baek_10093{
             bw.write(String.valueOf(0)+ "\n");
         else
             bw.write(String.valueOf(b - a - 1)+ "\n");
-        for(int i = a+1; i<b; i++)
+        for(long i = a+1; i<b; i++)
             bw.write(String.valueOf(i) + " ");
         bw.flush();
         bw.close();
