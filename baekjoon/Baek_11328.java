@@ -19,22 +19,17 @@ public class Baek_11328 {
 
     }
     static String strfry(String s1, String s2){
-        if(s1.length() !=s2.length())
-            return "Impossible";
         int [] arr = new int[26];
-        String [] sa1 = s1.split("");
-        String [] sa2 = s2.split("");
-        for(String c : sa1){
-            int j = c.charAt(0)-97;
-            arr[j] +=1;
-        }
-        for(String c :sa2){
-            int j = c.charAt(0)-97;
-            if(arr[j] ==0)
+        char [] st1 = s1.toCharArray();
+        char [] st2 = s2.toCharArray();
+
+        for(char c:st1)
+            arr[c-'a']++;
+        for(char c:st2)
+            arr[c-'a']--;
+        for(int i :arr)
+            if(i!=0)
                 return "Impossible";
-            else
-                arr[j]--;
-        }
-        return "Possible";
+        return "possible";
     }
 }
