@@ -15,27 +15,22 @@ public class Baek_1158 {
         // 맨 끝 조심
         StringTokenizer st = new StringTokenizer(br.readLine());
         int l_size = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
         List <Integer> li = new ArrayList<>(l_size);
-        int [] result = new int[l_size];
-        int cursor = 1;
-        int k = Integer.parseInt(st.nextToken())-1;
-        for(int i=0; i<=l_size;i++)
-            li.add(i);
+        int cursor = 0;
+        for(int i=0; i<l_size;i++)
+            li.add(i+1);
         bw.write("<");
         for(int i=0; i<l_size;i++){
-            cursor+=k;
-            if(cursor>li.size()){
-                if((cursor%=(li.size()-1))==0){
-                    cursor+=(li.size()-1);
-                    bw.write(li.remove(cursor)+"");
-                }
-                else
-                    bw.write(li.remove(cursor)+"");
-            }
-            else{
+            cursor+=(k-1);
+            if(cursor>=li.size()){
+                cursor %=li.size();
                 bw.write(li.remove(cursor)+"");
             }
-            if(li.size()!=1){
+            else
+                bw.write(li.remove(cursor)+"");
+
+            if(!li.isEmpty()){
                 bw.write(", ");
             }
         }
