@@ -22,14 +22,8 @@ public class Baek_1158 {
             li.add(i+1);
         bw.write("<");
         for(int i=0; i<l_size;i++){
-            cursor+=(k-1);
-            if(cursor>=li.size()){
-                cursor %=li.size();
-                bw.write(li.remove(cursor)+"");
-            }
-            else
-                bw.write(li.remove(cursor)+"");
-
+            cursor =(cursor+k-1)%li.size();
+            bw.write(li.remove(cursor)+"");
             if(!li.isEmpty()){
                 bw.write(", ");
             }
