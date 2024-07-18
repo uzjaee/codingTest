@@ -8,7 +8,6 @@ public class Baek_1919 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int [] arr = new int[26];
-        int [] arr2 = new int[26];
         int result = 0;
 
         char [] s1 = br.readLine().toCharArray();
@@ -16,9 +15,10 @@ public class Baek_1919 {
         for(char c : s1)
             arr[c-'a']++;
         for(char c: s2)
-            arr2[c-'a']++;
-        for(int i=0;i<26;i++)
-            result+=Math.abs(arr[i]-arr2[i]);
+            arr[c-'a']--;
+        for(int i=0;i<arr.length;i++) {
+            result += Math.abs(arr[i]);
+        }
         System.out.println(result);
 
     }
