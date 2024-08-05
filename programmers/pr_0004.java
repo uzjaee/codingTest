@@ -1,6 +1,6 @@
 package programmers;
 
-class Solution {
+class pr_0004 {
     public int solution(int n) {
         int answer = 0;
         for(int i=1;i<=n;i++){
